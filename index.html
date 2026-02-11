@@ -12,6 +12,7 @@
   </head>
   <body>
     <div class="container">
+        <div id="screenAlert" class="modal-alert"></div>
       <div class="heading">DNS LAB SIMULATOR</div>
       <div class="dns_query_container">
         <div class="query_section">
@@ -30,73 +31,62 @@
 
       <div class="dns_zone_container">
         <div class="cell dns_zone header">Zone</div>
+        <div class="cell dns_zone header">Type</div>
+        <div class="cell dns_zone header">Comment</div>
         <div class="cell dns_action header">Action</div>
         <div class="zone_container">
-          <!-- <div class="row">
-        <div class="cell">abc.com</div>
+          <div class="row">
+        <!-- <div class="cell">abc.com</div>
+        <div class="cell">Forward</div>
+        <div class="cell">lorem50</div>
         <div class="cell actions">
             <span class="material-icons icon-btn edit">edit</span>
             <span class="material-icons icon-btn delete">delete</span>
-        </div>
-    </div> -->
+        </div> -->
+    </div>
         </div>
       </div>
     </div>
+
+
 
     <div id="modalOverlay" class="modal-overlay">
       <div class="modal">
         <div class="modal-header">
-         
           <h2>Add Zone</h2>
-         <button class="close-btn" id="closeModalBtn">&times;</button>   
+          <button class="close-btn" id="closeModalBtn">&times;</button>
         </div>
-
-          
+        <div id="modalAlert" class="modal-alert"></div>
         <div class="modal-body">
-              
-          <form>
-                  
+          <form id="zoneForm">
             <div class="form-group">
-                       <label>Zone Name</label>         
-              <input type="text" placeholder="example.com" />       
+              <label>Zone Name</label
+              ><input type="text" name="zoneName" placeholder="example.com" required/>
             </div>
-
-                  
             <div class="form-group">
-                       <label>Zone Type</label>         
-              <select>
-                          
-                <option>Primary</option>
-                          
-                <option>Secondary</option>
-                          
+              <label>Zone Type</label
+              ><select name="zoneType" required>
+                <option>Authoritative</option>
+                <option>Delegation</option>
                 <option>Forward</option>
-                        
               </select>
-                    
             </div>
-
-                  
             <div class="form-group">
-                       <label>Description</label>         
-              <textarea rows="3" placeholder="Optional"></textarea>       
+              <label>Comments</label
+              ><textarea name="zoneComment" rows="3" placeholder="Optional"></textarea>
             </div>
-
-                  
             <div class="modal-footer">
-                      
               <button type="button" class="btn cancel" id="cancelBtn">
-                Cancel
-              </button>
-                      
-              <button type="submit" class="btn primary">Add Zone</button>       
+                Cancel</button
+              ><button type="submit" class="btn primary">Add Zone</button>
             </div>
-                
           </form>
-            
         </div>
       </div>
     </div>
+
+
+    
     <script src="script.js"></script>
   </body>
 </html>
